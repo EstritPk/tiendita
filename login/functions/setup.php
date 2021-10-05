@@ -1,0 +1,42 @@
+<?php
+
+function conectar()
+{
+    $con=mysqli_connect("localhost","root","","login");
+    return $con;
+}
+
+function fechahoy()
+{
+    date_default_timezone_set('America/Santiago');
+    $fecha=date('d-m-Y');
+    return $fecha;
+}
+
+function hora()
+{
+    date_default_timezone_set('America/Santiago');
+    $hora=date('H:i:s');
+    return $hora;
+}
+
+function fechabd($fecha)
+{
+    $dia=substr($fecha,0,2);
+    $mes=substr($fecha,3,2);
+    $ano=substr($fecha,6,4);
+    $fechabd=$ano."-".$mes."-".$dia;
+    return $fechabd;
+}
+
+function fechaesp($fecha)
+{
+    $dia=substr($fecha,8,2);
+    $mes=substr($fecha,5,2);
+    $ano=substr($fecha,0,4);
+    $fechaesp=$dia."-".$mes."-".$ano;
+    return $fechaesp;
+}
+
+
+?>
